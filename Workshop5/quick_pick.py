@@ -10,15 +10,19 @@
 # 5 10 16 22 35 42
 # 1 2 16 22 37 40
 # 1 17 20 23 25 27
-
 from random import randint
 
-quick_pick_range = int(input("Enter nuber of quick picks: "))
-quick_picks = []
-for picks in range(1, quick_pick_range + 1):
-    number = randint(1, 45)
-    if number not in quick_picks:
+HIGH = 45
+NUMBERS_IN_LIST = 6
+
+quick_pick_range = int(input("Enter number of quick picks: "))
+for i in range(0, quick_pick_range):
+    quick_picks = []
+    for picks in range(0, NUMBERS_IN_LIST):
+        number = randint(1, HIGH)
+        while number in quick_picks:
+            number = randint(1, HIGH)
         quick_picks.append(number)
-    else:
-        number = randint(1, 45)
-print(sorted(quick_picks))
+    for number in sorted(quick_picks):
+        print("{:2}".format(number), end=' ')
+    print('')

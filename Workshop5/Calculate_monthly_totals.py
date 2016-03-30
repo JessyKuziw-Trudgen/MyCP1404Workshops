@@ -15,10 +15,8 @@
 # The average of the numbers is 6.2
 
 
-count = 0
 numbers = []
 for num in range(5):
-    count += 1
     number = int(input('Number: '))
     numbers.append(number)
 print('the first number is', numbers[0])
